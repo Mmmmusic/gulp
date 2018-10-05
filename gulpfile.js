@@ -50,6 +50,8 @@ var autoprefixer = require("gulp-autoprefixer");
 var cssmin = require("gulp-cssmin");
 // 清除文件夹/文件
 var clean = require("gulp-clean");
+// 浏览器同步
+var browserSync = require("browser-sync").create();
 
 // 构建任务
 gulp.task("js",function(){
@@ -59,6 +61,7 @@ gulp.task("js",function(){
   // 找到src下的所有js文件
   gulp.src("./src/js/*.js")
   .pipe(gulp.dest("./dist/"))
+  .pipe(browserSync.reload({stream:true}))
 
 });
 
@@ -72,7 +75,8 @@ gulp.task("jsConcat",function(){
   // 合并后的js名字
   .pipe(concat("all.js"))
   // 写入到dist文件夹下
-  .pipe(gulp.dest("dist/"))
+  .pipe(gulp.dest("dist/js"))
+  .pipe(browserSync.reload({stream:true}))
 
 });
 
@@ -83,7 +87,9 @@ gulp.task("html",function(){
   // 压缩
   .pipe(htmlmin({//collapseWhitespace:true,
     }))
-  .pipe(gulp.dest("dist/html"))
+  .pipe(gulp.dest("dist/"))
+  .pipe(browserSync.reload({stream:true}))
+
 });
 
 // css合并 压缩
@@ -97,7 +103,9 @@ gulp.task("css",function(){
   // css进行压缩
   .pipe(cssmin())
   // 输出到dist文件夹下
-  .pipe(gulp.dest("dist/"))
+  .pipe(gulp.dest("dist/css"))
+  .pipe(browserSync.reload({stream:true}))
+
 });
 
 // css加私有前缀
@@ -110,7 +118,9 @@ gulp.task("autoCss",function(){
     cascade:true //美化前缀，默认为true
   }))
   // 输出到dist文件夹下
-  .pipe(gulp.dest("dist/"))
+  .pipe(gulp.dest("dist/css"))
+  .pipe(browserSync.reload({stream:true}))
+
 });
 
 // js压缩
@@ -122,7 +132,9 @@ gulp.task("jsUglify",function(){
   // 执行压缩
   .pipe(uglify())
   // 输出到dist文件夹
-  .pipe(gulp.dest("dist/"))
+  .pipe(gulp.dest("dist/js"))
+  .pipe(browserSync.reload({stream:true}))
+
 });
 
 // 清除文件夹
@@ -143,11 +155,33 @@ gulp.task("php",function(){
   .pipe(uglify())
   // 输出到指定文件夹
   .pipe(gulp.dest("dist/php"))
+  .pipe(browserSync.reload({stream:true}))
+
 });
 
 // 执行全部任务
 // default 是默认的，在命令行里直接输入 gulp 就行
 gulp.task("default",["jsConcat","html","css","autoCss","php","jsUglify"],function(){
+  // 如果当前文件夹下有代码变动，重新执行该代码
+  // 动态监听
+  gulp.watch("src/js/*.js",["jsConcat"]);
+  gulp.watch("src/**/*.html",["html"]);
+  gulp.watch("src/css/*.css",["css"]);
+  gulp.watch("src/css/{auto.css,login.css}",["autoCss"]);
+  gulp.watch("src/js/{iscroll.Veb.js,zepto.min.js}",["jsUglify"]);
+  gulp.watch("src/php/{a.js,b.js}",["php"]);
+  console.log("执行全部任务");
+});
+
+// browserSync 浏览器同步
+gulp.task("browser",["jsConcat","html","css","autoCss","php","jsUglify"],function(){
+  // 热刷新
+  browserSync.init({
+    port:3000,
+    server:{
+      baseDir:["dist"]
+    }
+  })
   // 如果当前文件夹下有代码变动，重新执行该代码
   // 动态监听
   gulp.watch("src/js/*.js",["jsConcat"]);
