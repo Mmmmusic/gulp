@@ -1,0 +1,28 @@
+.box{
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform:translate(-50%,-50%);
+      -ms-transform:translate(-50%,-50%);
+          transform:translate(-50%,-50%);
+  -webkit-animation: move 2s infinite;
+          animation: move 2s infinite;
+  background-color: #333438;
+}
+@-webkit-keyframes move{
+  0%{opacity: 0.2;border-radius:50%;}
+  50%{opacity: 1;border-radius:0%;}
+  100%{opacity: 0.2;border-radius:50%;}
+}
+@keyframes move{
+  0%{opacity: 0.2;border-radius:50%;}
+  50%{opacity: 1;border-radius:0%;}
+  100%{opacity: 0.2;border-radius:50%;}
+}
+#box{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}

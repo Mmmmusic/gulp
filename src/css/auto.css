@@ -1,0 +1,18 @@
+.box{
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%,-50%);
+  animation: move 2s infinite;
+  background-color: #333438;
+}
+@keyframes move{
+  0%{opacity: 0.2;border-radius:50%;}
+  50%{opacity: 1;border-radius:0%;}
+  100%{opacity: 0.2;border-radius:50%;}
+}
+#box{
+  display: flex;
+}

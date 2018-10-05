@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta>
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script src="js/rem.js"></script>
+<script src="js/zepto.min.js"></script>
+<script src="js/animate.js"></script>
+<style>
+
+  *{
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+  }
+  ul,li{
+    list-style: none;
+  }
+  .box{
+    width: 5rem;
+    height: 0.8rem;
+    overflow: hidden;
+    background-color: #333;
+    margin: 1rem auto;
+  }
+  .list{
+    width: 5rem;
+    height: 3.2rem;
+    text-align: center;
+  }
+  .list li{
+    height: 0.8rem;
+    line-height: 0.8rem;
+    font-size: 0.16rem;
+    color: #fff;
+  }
+
+</style>
+</head>
+<body>
+
+  <div class="box">
+    <ul class="list">
+      <li>伽卡他卡电子教室学生端 01</li>
+      <li>伽卡他卡电子教室学生端 02</li>
+      <li>伽卡他卡电子教室学生端 03</li>
+      <li>伽卡他卡电子教室学生端 04</li>
+    </ul>
+  </div>
+
+  <script>
+
+    var list = $(".list");
+    var h = $(".list li").height();
+    var timer = null;
+    console.log(h);
+    function ani(){
+      list.animate({marginTop:-h},1000,function(){
+      list.css({marginTop:0}).find("li").first().appendTo(list);
+      });
+    }
+
+    timer = setInterval(ani,1500);
+
+  </script>
+
+</body>
+</html>
