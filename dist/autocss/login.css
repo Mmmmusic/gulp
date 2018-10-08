@@ -45,7 +45,9 @@ input{
   top: 0;
   bottom: 0;
   left: 50%;
-  transform:translateX(-50%);
+  -webkit-transform:translateX(-50%);
+      -ms-transform:translateX(-50%);
+          transform:translateX(-50%);
   width: 7.2rem;
   border: none;
   overflow: hidden;
@@ -76,10 +78,10 @@ input{
 ::-webkit-input-placeholder{
   color:#000;
 }
-::-moz-placeholder{
+:-ms-input-placeholder{
   color:#000;
 }
-:-ms-input-placeholder{
+::-ms-input-placeholder{
   color:#000;
 }
 ::placeholder{
@@ -123,9 +125,15 @@ input{
   width: 6.62rem;
   height: 1.14rem;
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .btn a{
   font-size: 0.28rem;
