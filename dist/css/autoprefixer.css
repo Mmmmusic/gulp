@@ -1,0 +1,239 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2018-10-08 17:03:32
+ * @version $Id$
+ */
+
+*{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  transition:all 1s;
+}
+.box{
+  width: 100%;
+  min-width: 1200px;
+  height: 450px;
+  margin: 0 auto;
+}
+.container{
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+.banner-box{
+  height: 450px;
+  overflow: hidden;
+  background-color: #333438;
+}
+.first{
+  background: url(img/banner1-bg.jpg);
+}
+/*第一幕*/
+.desc{
+  position: absolute;
+  width: 1200px;
+  height: 450px;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+.desc img{
+  position: absolute;
+  display: block;
+}
+.desc img:nth-child(1){
+  top: -79px;
+  right: 210px;
+  animation:desc1 1.5s forwards;
+}
+.desc img:nth-child(2){
+  right: -500px;
+  top: 200px;
+  animation:desc2 1.5s forwards;
+}
+.desc img:nth-child(3){
+  bottom: -77px;
+  right: 200px;
+  animation:desc3 1.5s forwards;
+}
+.desc img:nth-child(4){
+  left: -574px;
+  top: 24px;
+  animation:desc4 1.5s forwards;
+}
+.desc img:nth-child(5){
+  top: -450px;
+  left: 300px;
+  animation:desc5 1.5s 1s forwards;
+}
+.desc img:nth-child(6){
+  left: -238px;
+  top: 180px;
+  animation:desc6 1.5s 1s forwards;
+}
+.desc img:nth-child(7){
+  left: -213px;
+  top: 114px;
+  animation:desc7 1.5s 1s forwards;
+}
+.desc img:nth-child(8){
+  top: -108px;
+  left: 434px;
+  animation:desc8 1.5s 1s forwards;
+}
+@keyframes desc1{
+  100%{top: 90px;}
+}
+@keyframes desc2{
+  100%{right: 140px;}
+}
+@keyframes desc3{
+  100%{bottom: 100px;}
+}
+@keyframes desc4{
+  100%{left: 49px;}
+}
+@keyframes desc5{
+  100%{transform:rotate(360deg);top: 179px;}
+}
+@keyframes desc6{
+  100%{transform:rotate(360deg);left: 161px;}
+}
+@keyframes desc7{
+  100%{transform:rotate(360deg);left: 152px;}
+}
+@keyframes desc8{
+  100%{transform:rotate(360deg);top: 57px;}
+}
+/*第二幕*/
+.desc-2{
+  position: absolute;
+  width: 1200px;
+  height: 450px;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+.second{
+  background-color: #e14c39;
+}
+.desc-2 img{
+  position: absolute;
+  display: block;
+}
+.desc-2 img:nth-child(1){
+  top: 233px;
+  right: 333px;
+  height: 0;
+  animation:second1 1s forwards;
+}
+.desc-2 img:nth-child(2){
+  top: 450px;
+  right: 401px;
+  transform:scale(0);
+  animation:second2 1s 1s forwards;
+}
+.desc-2 img:nth-child(3){
+  bottom: -257px;
+  right: 41px;
+  transform:scale(0);
+  animation:second3 1s 1s forwards;
+}
+.desc-2 img:last-child{
+  left: -152px;
+  bottom: 50px;
+  animation:second4 1s 3s forwards;
+}
+.list-1{
+  width: 440px;
+  height: 90px;
+  position: absolute;
+  top: 50px;
+  left: -440px;
+  font-family: "微软雅黑";
+  animation:second5 1s 1.5s forwards;
+}
+.desc-2 .list-1 span:nth-child(1){
+  color: #dafff8;
+  font-size: 30px;
+  position: absolute;
+  left: 0;
+  top: 16px;
+}
+.desc-2 .list-1 span:nth-child(2){
+  color: #fe5;
+  font-size: 46px;
+  position: absolute;
+  left: 124px;
+  top: 0;
+  font-weight: 700;
+}
+.desc-2 .list-1 span:nth-child(3){
+  color: #030600;
+  font-size: 20px;
+  position: absolute;
+  left: -10px;
+  bottom: -10px;
+}
+.list-2{
+  width: 580px;
+  height: 80px;
+  left: -580px;
+  top: 140px;
+  font-family: "微软雅黑";
+  animation:second6 1s 2s forwards;
+}
+.list-2 #txt{
+  left: 180px;
+}
+.list-3{
+  width: 380px;
+  height: 80px;
+  position: absolute;
+  bottom: 110px;
+  left: -380px;
+  animation:second7 1s 2.5s forwards;
+}
+.list-3 span:nth-child(1){
+  font-size: 30px;
+  color: #fffae5;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.list-3 span:nth-child(2){
+  font-size: 18px;
+  color: #ffe556;
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+}
+@keyframes second1{
+  100%{top: 61px;right: 80px;height: 345px;}
+}
+@keyframes second2{
+  100%{top: 240px;transform:scale(1);}
+}
+@keyframes second3{
+  100%{bottom: 0px;transform:scale(1);}
+}
+@keyframes second4{
+  100%{left: 110px;bottom: 50px;transform:rotate(360deg);}
+}
+@keyframes second5{
+  100%{left: 100px;}
+}
+@keyframes second6{
+  100%{left: 200px;}
+}
+@keyframes second7{
+  100%{left: 110px;}
+}
+/*第三幕*/
+.three{
+  background-color: #ffe100;
+}
+  

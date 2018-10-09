@@ -1,0 +1,50 @@
+js压缩：
+  gulp-uglify
+
+css压缩：
+  gulp-minify-css
+  gulp-cssmin
+
+html压缩：
+  gulp-minify-html
+  gulp-htmlmin
+
+js代码检查：
+  gulp-jshint
+
+合并文件：
+  gulp-concat
+
+编译Less：
+  gulp-less
+
+编译sass：
+  gulp-sass
+
+压缩图片：
+  gulp-imagemin
+
+自动加前缀：
+  gulp-autoprefixer
+
+  gulp-autoprefixer的browsers参数详解 （传送门）：
+  last 2 versions: 主流浏览器的最新两个版本
+  last 1 Chrome versions: 谷歌浏览器的最新版本
+  last 2 Explorer versions: IE的最新两个版本
+  last 3 Safari versions: 苹果浏览器最新三个版本
+  Firefox >= 20: 火狐浏览器的版本大于或等于20
+  iOS 7: IOS7版本
+  Firefox ESR: 最新ESR版本的火狐
+  > 5%: 全球统计有超过5%的使用率
+
+
+  1、gulp-concat---> 合并js
+  2、gulp-cssmin ---->css压缩
+  3、gulp-imagemin----->图片压缩
+  4、gulp-sass ----->sass编译
+  5、gulp-load-plugins ---->自动加载插件模块
+  6、gulp-uglify--->压缩js
+  7、browser-sync --->开启服务，浏览器同步刷新
+  8、gulp-imagemin -->图片压缩
+  9、gulp-autoprefixer -->自动添加前缀
+  10、gulp-htmlmin--->压缩html

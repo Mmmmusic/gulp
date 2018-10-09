@@ -1,0 +1,106 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2018-08-22 15:41:51
+ * @version $Id$
+ */
+a,
+applet,
+b,
+body,
+code,
+dd,
+del,
+div,
+dl,
+dt,
+em,
+fieldset,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+i,
+iframe,
+img,
+label,
+li,
+object,
+ol,
+p,
+pre,
+span,
+strong,
+sub,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr,
+u,
+ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline
+}
+
+
+
+input:focus {
+  outline: 0
+}
+
+input[type=button],
+input[type=reset],
+input[type=submit],
+input[type=text] {
+  -webkit-appearance: none;
+  border-radius: 0
+}
+
+textarea {
+  -webkit-appearance: none;
+  border-radius: 0
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0
+}
+
+ol,
+ul {
+  list-style: none
+}
+
+td,
+th {
+  vertical-align: middle
+}
+
+body {
+  margin: 0 auto;
+  font-family: Microsoft YaHei, Arial;
+  _font-family: Microsoft YaHei, 宋体, Arial;
+  font-size: 12px
+}
+
+html,
+html body {
+  _background-image: url(about:blank);
+  _background-attachment: fixed
+}
+
+/*leihao:2017-08-31 20:44:25*/
+
