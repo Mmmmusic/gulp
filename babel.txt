@@ -1,0 +1,11 @@
+安装babel-cli 
+	npm i babel-cli -g
+
+安装插件
+	npm i --save babel-presets-es2015
+
+实时监控
+	babel es6.js -w -o es5.js
+
+实时监控文件夹
+	babel es6 -w -d es5
