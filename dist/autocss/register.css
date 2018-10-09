@@ -1,0 +1,160 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2018-09-21 16:04:09
+ * @version $Id$
+ */
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "微软雅黑";
+}
+a{
+  text-decoration: none;
+  font-size: 0;
+  color: #000;
+}
+input{
+  font-size: 0.2rem;
+}
+.container{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  background-image: url(../images/login-img/reg-bg.jpg),url(../images/login-img/login-mask.png);
+  background-position: center center,center center;
+  background-repeat: no-repeat,no-repeat;
+  background-size: cover,cover;
+}
+.mask{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  opacity: .4;
+}
+.wrapper{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform:translate(-50%,-50%);
+      -ms-transform:translate(-50%,-50%);
+          transform:translate(-50%,-50%);
+  width: 7.2rem;
+  height: 10.8rem;
+  border: none;
+  overflow: hidden;
+}
+.logo{
+  width: 1.9rem;
+  margin: 0 auto 1.94rem auto;
+}
+.logo img{ 
+  width: 1.9rem;
+  height: 1.52rem;
+}
+.logo-info{
+  font-size: 0.45rem;
+  color: #0eb852;
+  text-align: center;
+}
+.login-box input{
+  outline: none;
+  width: 7.16rem;
+  height: 0.86rem;
+  border: 0.02rem #a0a0a0 solid;
+  border-radius: 0.06rem;
+  text-indent: 1.02rem;
+  display: block;
+  margin-bottom: 0.34rem;
+}
+.login-box .ipt-box input{
+  width: 4.6rem;
+  margin-bottom: 0;
+  text-indent: 1.26rem;
+}
+.ipt-box{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.code{
+  width: 2.46rem;
+  height: 0.9rem;
+  line-height: 0.9rem;
+  text-align: center;
+  font-weight: 600;
+  /*background-color: #cfcfcf;*/
+  font-size: 0.3rem;
+  border-radius: 0.06rem;
+}
+::-webkit-input-placeholder{
+  color:#969696;
+}
+:-ms-input-placeholder{
+  color:#969696;
+}
+::-ms-input-placeholder{
+  color:#969696;
+}
+::placeholder{
+  color:#969696;
+}
+.login-box .ipt{
+  position: relative;
+}
+.login-box .ipt:nth-child(1) i{
+  position: absolute;
+  top: 0.26rem;
+  left: 0.3rem;
+  width: 0.36rem;
+  height: 0.4rem;
+  background: url(../images/login-img/logo-user.png) no-repeat center center;
+  background-size: cover;
+}
+.login-box .ipt:nth-child(2) i{
+  position: absolute;
+  top: 0.26rem;
+  left: 0.3rem;
+  width: 0.36rem;
+  height: 0.5rem;
+  background: url(../images/login-img/logo-pwd.png) no-repeat center center;
+  background-size: cover;
+}
+.btn{
+  width: 5.22rem;
+  height: 0.74rem;
+  line-height: 0.74rem;
+  text-align: center;
+  border: 0.02rem #a0a0a0 solid;
+  border-radius: 0.19rem;
+  background-color: #fff;
+  margin: 0.86rem auto 0 auto;
+  font-size: 0;
+}
+.btn a{
+  font-size: 0.32rem;
+  padding: 0.16rem 1rem;
+}
+.info{
+  position: absolute;
+  bottom: 0.8rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.22rem;
+}
+.info a{
+  font-weight: bold;
+  font-size: 0.22rem;
+}

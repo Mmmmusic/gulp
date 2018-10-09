@@ -1,0 +1,5 @@
+静态资源：
+	browser-sync start --server --files "*.*"
+
+动态资源：
+	browser-sync start --proxy "localhost:8080" --files "*.*"
