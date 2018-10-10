@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    
+    ul li{
+      list-style: none;
+      width: 100px;
+      height: 30px;
+      background-color: #333439;
+      margin-top: 4px;
+      line-height: 30px;
+      text-align: center;
+      color: #ffffff;
+      font-size: 14px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h2>块级作用域</h2>
+
+  <ul id="list">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+  
+  <script>
+
+    // 事件委托写法
+    // list.onclick = function(e){
+    //   var e = e || window.event;
+    //   var target = e.target || e.srcElement;
+    //   if(target.nodeName == "LI"){
+    //     target.style.backgroundColor = "#e0244d";
+    //   }
+    // }
+
+    // es6写法
+    // for(let i = 0;i < list.children.length;i++){
+    //   list.children[i].onclick = function(){
+    //     list.children[i].style.backgroundColor = "#e0244d";
+    //   }
+    // }
+
+    // 闭包写法 
+    for(var i = 0;i < list.children.length;i++){
+
+      (function(i){
+        list.children[i].onclick = function(){
+          list.children[i].style.backgroundColor = "#e0244d";
+        }
+      })(i);
+
+    }
+
+  </script>
+
+</body>
+</html>

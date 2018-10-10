@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.polyfill.io/v2/polyfill.min.js" async defer></script>
+</head>
+<body>
+  
+  <h3>Polyfill 按需加载</h3>
+
+  <script>
+  
+    function polyfill(){
+
+      var node = document.createElement("script");
+      node.src = "https://cdn.polyfill.io/v2/polyfill.min.js";
+      document.body.appendChild(node);
+
+    }
+
+    polyfill();
+  
+  </script>
+
+</body>
+</html>

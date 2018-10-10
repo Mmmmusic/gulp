@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <h3>generator异步操作</h3>
+  <button id="btn">按钮</button>
+
+  <script>
+  
+    // 定义generator函数
+    function* fn(){
+      // 模拟异步调用
+      setTimeout(function(){
+        g.next("yes"); // 相当于promise resolve
+      },1500);
+      
+      // 存结果
+      var res = yield;
+      console.log(res);
+
+    }
+
+    var g = fn();
+
+    btn.onclick = function(){
+      g.next();
+    }
+
+  </script>
+
+</body>
+</html>

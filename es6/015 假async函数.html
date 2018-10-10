@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <h3>generator结合promise使用</h3>
+  <button id="btn">按钮</button>
+
+  <script>
+  
+    // 定义generator函数
+    function* fn(){
+
+      var p = new Promise(function(resolve,reject){
+        setTimeout(function(){
+          resolve("yes");
+        },1500);
+      });
+
+      // 拿到调用成功的结果
+      p.then(function(res){
+        console.log(res);
+      });
+
+      var res = yield;
+      console.log(res);
+
+    }
+
+    var g = fn();
+    btn.onclick = function(){
+      g.next();
+    }
+
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <h1>let和const</h1>
+
+  <script>
+    
+    // var
+    // if(true){
+    //   var x = 10;
+    // }
+    // console.log(x); // 10
+
+    // let
+    // if(true){
+    //   let x = 10;
+    // }
+    // console.log(x); // not defined
+
+    // const
+    // if(true){
+    //   const x = 10;
+    // }
+    // console.log(x); // not defined
+
+    // var 和 let const的区别
+    // var 存在变量提升的问题
+    // let const 不存在变量提升,拥有块级作用域
+
+    // 花括号包起来的就相当于是一个独立的作用域
+    // {} = ;(function(){})();
+
+    {
+      let x = 1;
+      console.log(x); // 1
+    } {
+      let x = 2;
+      console.log(x); // 2
+    }
+
+    // 变量提升
+    function fn() {
+      console.log(x); // undefined
+      var x = 10;
+      console.log(x); // 10
+    }
+    fn();
+
+    // let 和 const 不存在变量提升
+    // function fn(){
+    //   console.log(x); // x未定义,undefined
+    //   let x = 10;
+    //   console.log(x);
+    // }
+    // fn();
+
+    // let 和 const 区别
+    // let 声明变量
+    // const 定义常量,后期不能更改
+
+    let x = 10;
+    console.log(x); // 10
+    x = "第二个x";
+    console.log(x); // 第二个x
+
+    const y = "y";
+    console.log(y); // y
+    y = 20;
+    console.log(y); // 报错
+
+  </script>
+
+</body>
+
+</html>

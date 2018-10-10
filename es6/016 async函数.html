@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <h3>async函数</h3>
+  <h2>含义</h2>
+  <h5>
+    ES2017 标准引入了 async 函数，使得异步操作变得更加方便。<br>
+    async 函数是什么？一句话，它就是 Generator 函数的语法糖。
+  </h5>
+
+  <button id="btn">按钮</button>
+
+  <script>
+  
+    function sT(a){
+
+      return new Promise(function(resolve,reject){
+        setTimeout(function(){
+          resolve(a);
+        },1500);
+      });
+
+    }
+
+    async function fn(){
+      var res = await sT(100);
+      console.log(res);
+      var str = await sT(200);
+      console.log(str);
+    }
+
+    btn.onclick = function(){
+      fn();
+    }
+
+  </script>
+
+</body>
+</html>

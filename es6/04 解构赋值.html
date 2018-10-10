@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <h2>解构赋值</h2>
+
+  <script>
+  
+    var x = 10,y = 20;
+    console.log(x,y);
+    var [x,y] = [10,20];
+    console.log(x,y);
+    // 两组输出结果一致
+
+    var obj = {
+      add:function(){
+        console.log(1 + 1);
+      },
+      reduce:function(){
+        console.log(1 - 1);
+      }
+    }
+
+    var add = obj.add,reduce = obj.reduce;
+    add();
+    reduce();
+
+    var {add} = obj;
+    var {reduce} = obj;
+    add();
+    reduce();
+    // 两组输出结果一致
+
+  </script>
+
+</body>
+</html>

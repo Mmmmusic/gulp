@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <h2>箭头函数this指向</h2>
+  <h4 style="color:#e0244d;">箭头函数的this指向与当前所在的作用域保持一致</h4>
+
+  <button id="btn">按钮</button>
+  
+  <script>
+  
+    var fn = () =>{
+      console.log(this);
+    }
+    fn(); // 指向window
+    
+    btn.onclick = function(){
+      // console.log(this); // 当前对象
+      // function fn(){
+      //   console.log(this);
+      // }
+      // fn = fn.bind(this);
+      // fn(); // 当前对象
+
+      var fn = () =>{
+        console.log(this); // 与当前作用域的this指向保持一致 // btn
+      }
+      fn();
+    }
+
+    var obj = {
+      name:"veb",
+      say:()=>{
+        console.log(this.name);
+      }
+      // say: function say() {
+      //   console.log(undefined.name);
+      // }
+    }
+    obj.say();
+
+  </script>
+
+</body>
+</html>

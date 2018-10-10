@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <h2>函数默认值和缺省值</h2>
+
+  <script>
+  
+    // es5写法
+    function add(a,b){
+      b = b || 0;
+      console.log(a + b);
+    }
+    add(5);
+    add(5,10);
+
+    // es6
+    // 可以直接在参数内指定默认缺省值
+    function add(a = 0,b = 0){
+      console.log(a + b);
+    }
+    add();
+    add(1,2);
+
+    // 另一种使用方法
+    function fn({name,age}){
+      console.log(name,age);
+    }
+    fn({name:"var",age:18,});
+
+  </script>
+
+</body>
+</html>

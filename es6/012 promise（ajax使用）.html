@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <h3>
+    promise ajax使用
+  </h3>
+
+  <script>
+
+    // promise ajax使用
+    var ajax = function ajax(url) {
+      return new Promise(function (resolve, reject) {
+
+        // ajax使用
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url);
+        xhr.send();
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            resolve(xhr.responseText);
+          }
+        };
+      });
+    };
+
+    ajax("index.php?x=10").then(function (res) {
+      console.log("第一次请求结果", res);
+      return res;
+    }).then(function (res) {
+      return ajax("index.php?x=" + (parseInt(res) + 10));
+    }).then(function (res) {
+      console.log("第二次请求结果", res);
+    });
+
+  </script>
+
+</body>
+</html>
